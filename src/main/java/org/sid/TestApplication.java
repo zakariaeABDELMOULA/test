@@ -19,8 +19,9 @@ public class TestApplication implements CommandLineRunner{
 	}
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
+		//Modification de premier enregistrement
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		contactRepository.save(new Contact("Hassani","Mohamed",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
+		contactRepository.save(new Contact("zakariae","abdelmoula",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("khadija","benmoussa",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Hamid","Tayer",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Kaltoum","omali",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
