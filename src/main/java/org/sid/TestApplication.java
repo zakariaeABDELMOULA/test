@@ -20,7 +20,7 @@ public class TestApplication implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
 		//Modifi de premier enregistrement
-		//hamza test modification
+		//hamza test modifications
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 		contactRepository.save(new Contact("zakariae","abdelmoula",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("khadija","benmoussa",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
