@@ -21,7 +21,7 @@ public class Contact implements Serializable{
 	private String telephone;
 	private String Photo;
 	
-	
+	//////Modificationnnnnn
 	public Contact(String nom, String prenom, Date dateNaissance, String email, String telephone,
 			String photo) {
 		super();
