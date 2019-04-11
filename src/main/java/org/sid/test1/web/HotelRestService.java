@@ -3,7 +3,6 @@ package org.sid.test1.web;
 import java.util.List;
 
 import org.sid.dao.HotelRepository;
-import org.sid.entities.Contact;
 import org.sid.entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
