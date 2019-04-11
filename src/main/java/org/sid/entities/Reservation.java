@@ -22,9 +22,8 @@ public class Reservation implements Serializable{
 	public Reservation() {
 		super();
 	}
-	public Reservation(Long id_reservation, Long id_personne, Date date_debut, Date date_fin, Double somme) {
+	public Reservation( Long id_personne, Date date_debut, Date date_fin, Double somme) {
 		super();
-		this.id_reservation = id_reservation;
 		this.id_personne = id_personne;
 		this.date_debut = date_debut;
 		this.date_fin = date_fin;

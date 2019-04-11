@@ -5,8 +5,10 @@ import java.text.SimpleDateFormat;
 
 import org.sid.dao.ChambreRepository;
 import org.sid.dao.ContactRepository;
+import org.sid.dao.ImageHotelRepository;
 import org.sid.entities.Chambre;
 import org.sid.entities.Contact;
+import org.sid.entities.ImageHotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +18,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TestApplication implements CommandLineRunner{
 	@Autowired
 	private ContactRepository contactRepository;
-	private	ChambreRepository chambreRepository;
+	@Autowired
+	private	ImageHotelRepository imageHotelRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(TestApplication.class, args);
 	}
@@ -28,13 +31,13 @@ public class TestApplication implements CommandLineRunner{
 		contactRepository.save(new Contact("zakariae","abdelmoula",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("khadija","benmoussa",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Hamid","Tayer",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
-		contactRepository.save(new Contact("Kaltoum","omali",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
+		contactRepository.save(new Contact("Kaltoum ","omali",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		
-		//ajout de chambre
-		/*Long n =(long) 1;
-		Chambre chambre = new Chambre(n, "premier hotel", n, 200.3);
-		System.out.println(chambre.getDescription());
-		chambreRepository.save(chambre);*/
+		//ajout de chambre  
+		Long n =(long) 1;
+		ImageHotel image = new ImageHotel(n, "premier hotel");
+		System.out.println(image.getImage());
+		imageHotelRepository.save(image);
 	}
 
 }

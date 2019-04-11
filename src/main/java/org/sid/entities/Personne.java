@@ -25,10 +25,9 @@ public class Personne implements Serializable{
 	private String type;
 	private String etat = "en traitement";
 	private String image;
-	public Personne(Long id_personne, String nom, String prenom, Date date_naissance, String cin, String pays,
+	public Personne(String nom, String prenom, Date date_naissance, String cin, String pays,
 			String telephone, String email, String mdp, String type, String etat, String image) {
 		super();
-		this.id_personne = id_personne;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.date_naissance = date_naissance;
