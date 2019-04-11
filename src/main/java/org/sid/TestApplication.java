@@ -3,7 +3,9 @@ package org.sid;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import org.sid.dao.ChambreRepository;
 import org.sid.dao.ContactRepository;
+import org.sid.entities.Chambre;
 import org.sid.entities.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -14,6 +16,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TestApplication implements CommandLineRunner{
 	@Autowired
 	private ContactRepository contactRepository;
+	private	ChambreRepository chambreRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(TestApplication.class, args);
 	}
@@ -26,8 +29,12 @@ public class TestApplication implements CommandLineRunner{
 		contactRepository.save(new Contact("khadija","benmoussa",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Hamid","Tayer",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Kaltoum","omali",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
-
-
+		
+		//ajout de chambre
+		/*Long n =(long) 1;
+		Chambre chambre = new Chambre(n, "premier hotel", n, 200.3);
+		System.out.println(chambre.getDescription());
+		chambreRepository.save(chambre);*/
 	}
 
 }
