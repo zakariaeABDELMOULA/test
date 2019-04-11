@@ -9,6 +9,5 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long>{
-	@Query("")
-	public Page<Reservation> chercher(@Param("x")String mc, Pageable pageable);
+
 }

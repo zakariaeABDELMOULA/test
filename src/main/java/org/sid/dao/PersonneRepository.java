@@ -10,6 +10,5 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface PersonneRepository extends JpaRepository<Personne, Long>{
-	@Query("")
-	public Page<Personne> chercher(@Param("x")String mc, Pageable pageable);
+
 }

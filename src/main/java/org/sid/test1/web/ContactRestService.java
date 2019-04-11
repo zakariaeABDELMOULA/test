@@ -48,12 +48,5 @@ public class ContactRestService {
 		return true;
 	}
 	
-	@RequestMapping(value = "/chercherContacts",method = RequestMethod.GET)
-	private Page<Contact> chercher(
-			@RequestParam(name="mc",defaultValue="")String mc,
-			@RequestParam(name="page",defaultValue="0")int  page,
-			@RequestParam(name="size",defaultValue="5")int  size)
-	{
-		return contactRepository.chercher("%"+mc+"%",new PageRequest(page, size));
-	}
+
 }

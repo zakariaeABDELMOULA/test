@@ -48,12 +48,5 @@ public class ReservationRestService {
 		return true;
 	}
 	
-	@RequestMapping(value = "/chercherreservations",method = RequestMethod.GET)
-	private Page<Reservation> chercher(
-			@RequestParam(name="mc",defaultValue="")String mc,
-			@RequestParam(name="page",defaultValue="0")int  page,
-			@RequestParam(name="size",defaultValue="5")int  size)
-	{
-		return ReservationRepository.chercher("%"+mc+"%",new PageRequest(page, size));
-	}
+
 }

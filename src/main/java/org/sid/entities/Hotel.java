@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 @Entity
 public class Hotel implements Serializable{
 	@Id @GeneratedValue
-	private Long id;
+	private Long id_hotel;
 	private String raison_social;
 	@Temporal(TemporalType.DATE)
 	private Date date_creation;
@@ -159,14 +159,15 @@ public class Hotel implements Serializable{
 
 
 
-	public Long getId() {
-		return id;
+
+	public Long getId_hotel() {
+		return id_hotel;
 	}
 
 
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId_hotel(Long id_hotel) {
+		this.id_hotel = id_hotel;
 	}
 
 

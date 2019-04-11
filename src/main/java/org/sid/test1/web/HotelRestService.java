@@ -22,39 +22,32 @@ public class HotelRestService {
 	@Autowired
 	private HotelRepository hotelRepository;
 	@RequestMapping(value = "/hotels",method = RequestMethod.GET)
-	private List<Hotel> getContacts(){
+	private List<Hotel> getHotels(){
 		return hotelRepository.findAll();
 	}
 	
 	@RequestMapping(value = "/hotel/{id}",method = RequestMethod.GET)
-	private Hotel getContacts(@PathVariable Long id){
+	private Hotel getHotel(@PathVariable Long id){
 		return hotelRepository.findOne(id);
 	}
 	
 	@RequestMapping(value = "/hotels",method = RequestMethod.POST)
-	private Hotel save(@RequestBody Hotel hotel){
+	private Hotel saveHotel(@RequestBody Hotel hotel){
 		return hotelRepository.save(hotel);
 	}
 	
 	@RequestMapping(value = "/hotels/{id}",method = RequestMethod.PUT)
-	private Hotel update(@PathVariable Long id, @RequestBody Hotel hotel){
-		hotel.setId(id);
+	private Hotel updateHotel(@PathVariable Long id, @RequestBody Hotel hotel){
+		hotel.setId_hotel(id);
 		return hotelRepository.save(hotel);
 	}
 	
 	@RequestMapping(value = "/hotels/{id}",method = RequestMethod.DELETE)
-	private boolean supprimer(@PathVariable Long id){
+	private boolean supprimerHotel(@PathVariable Long id){
 		hotelRepository.delete(id);
 		return true;
 	}
 	
-	@RequestMapping(value = "/chercherHotels",method = RequestMethod.GET)
-	private Page<Hotel> chercher(
-			@RequestParam(name="mc",defaultValue="")String mc,
-			@RequestParam(name="page",defaultValue="0")int  page,
-			@RequestParam(name="size",defaultValue="5")int  size)
-	{
-		return hotelRepository.chercher("%"+mc+"%",new PageRequest(page, size));
-	}
+
 
 }
