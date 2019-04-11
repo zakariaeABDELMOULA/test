@@ -6,9 +6,11 @@ import java.text.SimpleDateFormat;
 import org.sid.dao.ChambreRepository;
 import org.sid.dao.ContactRepository;
 import org.sid.dao.ImageHotelRepository;
+import org.sid.dao.PersonneRepository;
 import org.sid.entities.Chambre;
 import org.sid.entities.Contact;
 import org.sid.entities.ImageHotel;
+import org.sid.entities.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +22,8 @@ public class TestApplication implements CommandLineRunner{
 	private ContactRepository contactRepository;
 	@Autowired
 	private	ImageHotelRepository imageHotelRepository;
+	@Autowired
+	private	PersonneRepository personneRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(TestApplication.class, args);
 	}
@@ -38,6 +42,9 @@ public class TestApplication implements CommandLineRunner{
 		ImageHotel image = new ImageHotel(n, "premier hotel");
 		System.out.println(image.getImage());
 		imageHotelRepository.save(image);
+		
+		//ajout du personne 
+		personneRepository.save(new Personne("ben ali", "ahmed", df.parse("10/02/1992"), "112Z", "maroc", "0664645464", "ihdf@df.com", "", "", "", ""));
 	}
 
 }
