@@ -19,7 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TestApplication implements CommandLineRunner{
 	@Autowired
-	private ContactRepository contactRepository;
+	private ContactRepository contactRepository; 
 	@Autowired
 	private	ImageHotelRepository imageHotelRepository;
 	@Autowired
