@@ -6,13 +6,16 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity
+@Table(uniqueConstraints=@UniqueConstraint(name="uniqueEmailh", columnNames = { "email" }))
 public class Hotel implements Serializable{
 	@Id @GeneratedValue
-	private Long id;
+	private Long id_hotel;
 	private String raison_social;
 	@Temporal(TemporalType.DATE)
 	private Date date_creation;
@@ -155,6 +158,19 @@ public class Hotel implements Serializable{
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+
+
+	public Long getId_hotel() {
+		return id_hotel;
+	}
+
+
+
+	public void setId_hotel(Long id_hotel) {
+		this.id_hotel = id_hotel;
 	}
 
 

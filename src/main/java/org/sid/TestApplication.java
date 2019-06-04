@@ -15,9 +15,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 @SpringBootApplication
-public class TestApplication implements CommandLineRunner{
+public class TestApplication extends SpringBootServletInitializer implements CommandLineRunner{
 	@Autowired
 	private ContactRepository contactRepository; 
 	@Autowired
@@ -29,9 +35,9 @@ public class TestApplication implements CommandLineRunner{
 	}
 	public void run(String... arg0) throws Exception {
 		// TODO Auto-generated method stub
-		//Modifi de premier enregistrement
+		//Modifi de premier enregistrement 
 		//hamza test modification
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		/*DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 		contactRepository.save(new Contact("zakariae","abdelmoula",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("khadija","benmoussa",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
 		contactRepository.save(new Contact("Hamid","Tayer",df.parse("10/02/1992"),"email@gmail.com","061413321","hasan.jpg"));
@@ -45,6 +51,10 @@ public class TestApplication implements CommandLineRunner{
 		
 		//ajout du personne 
 		personneRepository.save(new Personne("ben ali", "ahmed", df.parse("10/02/1992"), "112Z", "maroc", "0664645464", "ihdf@df.com", "", "", "", ""));
+	*/
 	}
-
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(TestApplication.class);
+    }
 }
