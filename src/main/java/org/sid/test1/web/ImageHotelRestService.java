@@ -1,4 +1,5 @@
 package org.sid.test1.web;
+
 import java.util.List;
 
 import org.sid.dao.ImageHotelRepository;

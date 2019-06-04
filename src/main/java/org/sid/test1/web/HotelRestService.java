@@ -1,5 +1,6 @@
 package org.sid.test1.web;
 
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -71,6 +72,7 @@ public class HotelRestService {
 			//return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);	
 		}
 	}
+
 
 	
 	@RequestMapping(value = "/hotels/{id}",method = RequestMethod.PUT)

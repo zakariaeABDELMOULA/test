@@ -12,4 +12,5 @@ import org.springframework.data.repository.query.Param;
 public interface ImageHotelRepository extends JpaRepository<ImageHotel, Long>{
 	@Query("select c from ImageHotel c where c.image like :x")
 	public Page<ImageHotel> chercher(@Param("x")String mc, Pageable pageable);
+
 }
