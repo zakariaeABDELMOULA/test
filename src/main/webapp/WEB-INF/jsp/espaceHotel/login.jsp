@@ -58,7 +58,7 @@
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
 							</label>
-						</div>
+						</div> 
 
 						<div>
 							<a href="#" class="txt1">
