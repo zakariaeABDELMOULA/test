@@ -8,5 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long>{
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/zakariaeABDELMOULA/test.git
 }

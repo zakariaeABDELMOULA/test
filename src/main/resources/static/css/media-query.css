@@ -50,6 +50,7 @@
 @media (min-width: 1281px) {
     .impx-services-list {
         margin-top: -100px;
+        margin-left: 400px;
     }
     .impx-slide-fw-caption {
         top: 30px;

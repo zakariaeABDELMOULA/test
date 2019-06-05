@@ -21,6 +21,7 @@ public class Chambre implements Serializable{
 		super();
 	}
 	public Chambre(Long id_hotel, String description, Long promotion, Double prix) {
+		//comment test zakaiae
 		super();
 		this.id_hotel = id_hotel;
 		this.description = description;
