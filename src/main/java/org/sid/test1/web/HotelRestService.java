@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.util.List;
 
 import org.sid.dao.HotelRepository;
+import org.sid.dao.ImageHotelRepository;
 import org.sid.entities.Hotel;
+import org.sid.entities.ImageHotel;
 import org.sid.entities.Hotel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,6 +36,9 @@ public class HotelRestService {
 
 	@Autowired
 	private HotelRepository hotelRepository;
+	@Autowired
+	private ImageHotelRepository imageHotelRepository;
+	
 	@RequestMapping(value = "/hotels",method = RequestMethod.GET)
 	private List<Hotel> getHotels(){
 		return hotelRepository.findAll();
@@ -53,17 +58,24 @@ public class HotelRestService {
 	@RequestMapping(value = "/hoteles",method = RequestMethod.POST,consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	private ResponseEntity<Object> saveWithImage(@RequestParam(required=true, value="filename") MultipartFile file, @RequestParam(required=true, value="jsondata")String jsondata) throws IOException{
 		try {
+			
 		Hotel hotel = objectMapper.readValue(jsondata, Hotel.class);
-		/*hotel.setImage("imagesHoteles/test.jpeg");
-		File convertFile = new File("src/main/resources/static/"+hotel.getImage());
+		hotelRepository.save(hotel);
+		
+		hotel = hotelRepository.lastHotelAdded();
+		
+		ImageHotel imageHotel = new ImageHotel();
+		imageHotel.setId_hotel(hotel.getId_hotel());
+		imageHotel.setImage("imagesHoteles/"+hotel.getId_hotel()+".jpeg");
+		imageHotelRepository.save(imageHotel);
+
+		File convertFile = new File("src/main/resources/static/"+imageHotel.getImage());
 		convertFile.createNewFile();
 		FileOutputStream fout = new FileOutputStream(convertFile);
 		fout.write(file.getBytes());
 		fout.close();
 		
-		*/
 		System.out.println(hotel.getAdresse());
-		hotelRepository.save(hotel);
 		return new ResponseEntity<>("Vôtre compte est crée avec succées.", HttpStatus.OK);	
 		}catch(Exception ex) {
 			return new ResponseEntity<>(ex.getMessage().toString()+".", HttpStatus.INTERNAL_SERVER_ERROR);

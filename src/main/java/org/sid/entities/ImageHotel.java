@@ -31,10 +31,11 @@ public class ImageHotel implements Serializable{
 	public void setId_imageHotel(Long id_imageHotel) {
 		this.id_imageHotel = id_imageHotel;
 	}
-	public Long getId_chambre() {
+	
+	public Long getId_hotel() {
 		return id_hotel;
 	}
-	public void setId_chambre(Long id_hotel) {
+	public void setId_hotel(Long id_hotel) {
 		this.id_hotel = id_hotel;
 	}
 	public String getImage() {
