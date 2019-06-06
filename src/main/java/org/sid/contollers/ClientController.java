@@ -1,6 +1,9 @@
 package org.sid.contollers;
 
 import javax.management.Query;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.sid.dao.PersonneRepository;
 import org.sid.entities.Personne;
@@ -26,13 +29,16 @@ public class ClientController {
 	    }
 	 	
 	 	@GetMapping({"/", "/authentificationClient"})
-	    public String authentification(Model model, @RequestParam(value="email") String email,@RequestParam(value="mdp") String mdp) {
+	    public String authentification(HttpServletRequest request,Model model, @RequestParam(value="email") String email,@RequestParam(value="mdp") String mdp) {
 	 		Personne personne ;
 	        System.out.println(email+" "+mdp);
 	        personne = personneRepository.authentification(email, mdp);
 	        if(personne != null) {
 	        	System.out.println("id : "+personne.getId_personne());
-	        	return "/index";
+	        	HttpSession session = request.getSession();
+	        	session.setAttribute("personne", personne);
+	        	System.out.println(((Personne) request.getSession().getAttribute("personne")).getEmail());
+	        	return "site/index";
 	        }
 	        else {
 		        model.addAttribute("error", "error");
