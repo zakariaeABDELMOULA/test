@@ -6,6 +6,8 @@ import org.sid.entities.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +26,10 @@ public class ReservationRestService {
 	@RequestMapping(value = "/reservations",method = RequestMethod.GET)
 	private List<Reservation> getReservations(){
 		return reservationRestService.findAll();
+	}
+	@RequestMapping(value = "/reservations/angular",method = RequestMethod.GET)
+	private List<Object> getReservationsAngular(){
+		return reservationRestService.tous();
 	}
 	
 	@RequestMapping(value = "/reservations/{id}",method = RequestMethod.GET)
@@ -46,6 +52,11 @@ public class ReservationRestService {
 	private boolean supprimer(@PathVariable Long id){
 		reservationRestService.delete(id);
 		return true;
+	}
+	@RequestMapping(value = "/reservations/angulare/{id}",method = RequestMethod.DELETE)
+	private  ResponseEntity<Object>  supprimerReservationAngulare(@PathVariable Long id){
+		reservationRestService.delete(id);
+		return new ResponseEntity<>("\"success"+id+"\"", HttpStatus.OK);
 	}
 	
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -35,11 +35,11 @@
 			<div class="wrap-login100">
 				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
 					<span class="login100-form-title-1">
-						Sign In
+						Espace Client
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" action="/authentificationClient">
+				<form class="login100-form validate-form" action="/authentificationClient" method="post">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
 						<input class="input100" type="text" name="email" placeholder="Enter username">
@@ -61,8 +61,8 @@
 						</div>
 
 						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
+							<a href="inscriptionClient" class="txt1">
+								S'inscrir
 							</a>
 						</div>
 					</div>

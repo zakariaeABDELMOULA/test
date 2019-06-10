@@ -14,20 +14,30 @@ public class Reservation implements Serializable{
 		@Id @GeneratedValue
 	private Long id_reservation;
 	private Long id_personne;
+	private Long id_chambre;	
 		@Temporal(TemporalType.DATE)
 	private Date date_debut;
 		@Temporal(TemporalType.DATE)
 	private Date date_fin;
 	private Double somme;
+	private String etat;
 	public Reservation() {
 		super();
 	}
-	public Reservation( Long id_personne, Date date_debut, Date date_fin, Double somme) {
+	public Reservation(Long id_personne, Long id_chambre, Date date_debut, Date date_fin, Double somme, String etat) {
 		super();
 		this.id_personne = id_personne;
+		this.id_chambre = id_chambre;
 		this.date_debut = date_debut;
 		this.date_fin = date_fin;
 		this.somme = somme;
+		this.etat = etat;
+	}
+	public Long getId_chambre() {
+		return id_chambre;
+	}
+	public void setId_chambre(Long id_chambre) {
+		this.id_chambre = id_chambre;
 	}
 	public Long getId_reservation() {
 		return id_reservation;
@@ -59,6 +69,12 @@ public class Reservation implements Serializable{
 	public void setSomme(Double somme) {
 		this.somme = somme;
 	}
-
+	public String getEtat() {
+		return etat;
+	}
+	public void setEtat(String etat) {
+		this.etat = etat;
+	}
+	
 }
 

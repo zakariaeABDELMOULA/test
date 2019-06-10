@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -39,7 +39,7 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" action="/authentificationHotel">
+				<form class="login100-form validate-form" method="post" action="/authentificationHotel">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Username</span>
 						<input class="input100" type="text" name="email" placeholder="Enter username">
@@ -61,8 +61,8 @@
 						</div> 
 
 						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
+							<a href="inscriptionHotel" class="txt1 text-success">
+								s'inscrir
 							</a>
 						</div>
 					</div>

@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.sid.dao.HotelRepository;
 import org.sid.dao.ImageHotelRepository;
 import org.sid.entities.Hotel;
@@ -60,22 +62,16 @@ public class HotelRestService {
 		try {
 			
 		Hotel hotel = objectMapper.readValue(jsondata, Hotel.class);
-		hotelRepository.save(hotel);
-		
-		hotel = hotelRepository.lastHotelAdded();
-		
-		ImageHotel imageHotel = new ImageHotel();
-		imageHotel.setId_hotel(hotel.getId_hotel());
-		imageHotel.setImage("imagesHoteles/"+hotel.getId_hotel()+".jpeg");
-		imageHotelRepository.save(imageHotel);
+		hotel.setImage("imagesHoteles/"+hotel.getRaison_social()+hotel.getEmail()+".jpeg");
 
-		File convertFile = new File("src/main/resources/static/"+imageHotel.getImage());
+		File convertFile = new File("src/main/resources/static/"+hotel.getImage());
 		convertFile.createNewFile();
 		FileOutputStream fout = new FileOutputStream(convertFile);
 		fout.write(file.getBytes());
 		fout.close();
 		
 		System.out.println(hotel.getAdresse());
+		hotelRepository.save(hotel);
 		return new ResponseEntity<>("Vôtre compte est crée avec succées.", HttpStatus.OK);	
 		}catch(Exception ex) {
 			return new ResponseEntity<>(ex.getMessage().toString()+".", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -85,6 +81,30 @@ public class HotelRestService {
 		}
 	}
 
+	
+	@RequestMapping(value = "/mhoteles",method = RequestMethod.POST,consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	private ResponseEntity<Object> msaveWithImage(HttpServletRequest request,@RequestParam(required=true, value="filename") MultipartFile file, @RequestParam(required=true, value="jsondata")String jsondata) throws IOException{
+		try {
+			
+		Hotel hotel = objectMapper.readValue(jsondata, Hotel.class);
+		if(file.getSize()>0) {
+		File convertFile = new File("src/main/resources/static/"+hotel.getImage());
+		convertFile.createNewFile();
+		FileOutputStream fout = new FileOutputStream(convertFile);
+		fout.write(file.getBytes());
+		fout.close();
+		}
+		System.out.println(hotel.getRaison_social());
+		hotelRepository.save(hotel);
+		request.getSession().setAttribute("hotel", hotel);
+		return new ResponseEntity<>("Vôtre compte est crée avec succées.", HttpStatus.OK);	
+		}catch(Exception ex) {
+			return new ResponseEntity<>(ex.getMessage().toString()+".", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		finally {
+			//return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);	
+		}
+	}
 
 	
 	@RequestMapping(value = "/hotels/{id}",method = RequestMethod.PUT)
@@ -98,6 +118,13 @@ public class HotelRestService {
 		hotelRepository.delete(id);
 		return true;
 	}
+	
+	@RequestMapping(value = "/hotels/angulare/{id}",method = RequestMethod.DELETE)
+	private  ResponseEntity<Object> supprimerHotelAngulare(@PathVariable Long id){
+		hotelRepository.delete(id);
+		return new ResponseEntity<>("\"success"+id+"\"", HttpStatus.OK);	
+	}
+	
 	
 
 

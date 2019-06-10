@@ -1,3 +1,8 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/reservation" user="root" password=""/>
 
 <header id="impx-header">
 	<div>
@@ -86,7 +91,7 @@
 					<!-- Header Logo -->
 					<div class="uk-width-auto">
 						<div class="impx-logo">
-							<a href="index.html"><img src="images/logo.png" class=""
+							<a href="index"><img src="images/logo.png" class=""
 								alt="Logo"></a>
 						</div>
 					</div>
@@ -107,9 +112,9 @@
 											</div>
 										</a>
 									</li>
-									<li><a href="rooms1.html" class="uk-navbar-nav-subtitle"><div>
+									<li><a href="tousleschambres" class="uk-navbar-nav-subtitle"><div>
 												Les chambres
-												<div class="uk-navbar-subtitle">Notre meuilleur Suites</div>
+												<div class="uk-navbar-subtitle">Nos meuilleur Suites</div>
 											</div></a>
 										<div
 											class="uk-navbar-dropdown uk-navbar-dropdown-width-4 impx-megamenu"
@@ -118,7 +123,7 @@
 												data-uk-grid>
 											
 												<sql:query var="rs" dataSource="${db}">
-												select i.image,raison_social,c.description from chambre c,hotel h, image_chambre i where c.id_hotel = h.id_hotel && i.id_chambre = c.id_chambre LIMIT 4
+												select c.id_chambre,i.image,raison_social,c.description from chambre c,hotel h, image_chambre i where c.id_hotel = h.id_hotel && i.id_chambre = c.id_chambre LIMIT 4
 												</sql:query>
 												<c:forEach var="columnName" items="${rs.rows}">
 													<div>
@@ -126,65 +131,75 @@
 															<li class="uk-nav-header uk-text-bold">${columnName.raison_social}</li>
 															<li><a href="rooms1.html"><img
 																	src="${columnName.image}" alt=""></a>
-																<p
-																	class="uk-margin-small-bottom uk-margin-small-top impx-hidden-m">${columnName.description}</p> <a
+																<a
 																class="uk-button uk-button-default uk-button-small impx-button impx-button-outline aqua small small-border"
-																href="rooms1.html">Visit Page</a></li>
+																href="room-detail?id_chambre=${columnName.id_chambre }">Visit Page</a></li>
 														</ul>
 													</div>
-												</c:forEach>												
+												</c:forEach>	
+																						
 											</div>
 										</div></li>
-									<li><a href="restaurant.html"><div>
-												Restaurant
-												<div class="uk-navbar-subtitle">In-house Restaurant</div>
-											</div></a></li>
-									<li><a href="spa.html"><div>
-												Spa
-												<div class="uk-navbar-subtitle">Our Spa Service</div>
-											</div></a></li>
-									<li><a href="activities.html"
-										class="uk-navbar-nav-subtitle"><div>
-												Activities
-												<div class="uk-navbar-subtitle">Our Facilities</div>
-											</div></a></li>
-									<li class="uk-parent"><a href="#"
-										class="uk-navbar-nav-subtitle"><div>
-												Pages
-												<div class="uk-navbar-subtitle">the Other Pages</div>
-											</div></a>
-										<div class="uk-navbar-dropdown">
-											<ul class="uk-nav uk-navbar-dropdown-nav">
-												<li><a href="about.html">About Us</a></li>
-												<li><a href="testimonial.html">Testimonial</a></li>
-												<li><a href="blog.html">Blog</a></li>
-												<li><a href="single-post.html">Single Post</a></li>
-												<li><a href="gallery.html">Gallery</a></li>
-												<li><a href="element.html">Element</a></li>
-											</ul>
-										</div></li>
-									<li><a href="contact.html" class="uk-navbar-nav-subtitle"><div>
-												Contact
-												<div class="uk-navbar-subtitle">Get in Touch</div>
-											</div></a></li>
-									<c:if test="${sessionScope.personne != null }">
+										<li>
+											<a href="tousleshotels">
+												<div>
+													Les Hôtels
+												</div>
+											</a>
+										</li>
+										<li>
+										<a href="index#sommeNous">
+											<div>
+												Pourquoi nous ?
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="index#offre">
+											<div>
+												Nos meuilleur offre
+											</div>
+										</a>
+									</li>
+									<c:if test="${sessionScope.objetConnecter != null }">
 										<!-- menu d'authentification ajouter par hamza -->
 										<li class="nav-item dropdown"><a
 											class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 											role="button" data-toggle="dropdown" aria-haspopup="true"
 											aria-expanded="false"> <img
-												src="${sessionScope.personne.image }"
+												src="${sessionScope.objetConnecter.image }"
 												style="display: block; border-radius: 200px; box-sizing: border-box; background-color: #DDD; border: 1px solid #31a9a9;"
 												width="70" height="70">
 										</a> <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
 											<div
 												class="dropdown-menu dropdown-menu-right animate slideIn"
 												aria-labelledby="navbarDropdown">
-												<a class="dropdown-item" href="#">My Profile</a> <a
-													class="dropdown-item" href="#">My reservations</a>
+												<a class="dropdown-item" href="modifierProfile">Mon Profile</a> <a
+													class="dropdown-item" href="mesreservations">Mes réservations</a>
 												<div class="dropdown-divider"
 													style="border: 1px solid #31a9a9"></div>
-												<a class="dropdown-item" href="#">Log Out</a>
+												<a class="dropdown-item" href="logOutClient">Déconnecter</a>
+											</div></li>
+									</c:if>
+									<c:if test="${sessionScope.hotel != null }">
+										<!-- menu d'authentification ajouter par hamza -->
+										<li class="nav-item dropdown"><a
+											class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+											role="button" data-toggle="dropdown" aria-haspopup="true"
+											aria-expanded="false"> <img
+												src="${sessionScope.hotel.image }"
+												style="display: block; border-radius: 200px; box-sizing: border-box; background-color: #DDD; border: 1px solid #31a9a9;"
+												width="70" height="70">
+										</a> <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+											<div
+												class="dropdown-menu dropdown-menu-right animate slideIn"
+												aria-labelledby="navbarDropdown">
+												<a class="dropdown-item" href="modifierHotel">Mon Hôtel</a>
+												 <a class="dropdown-item" href="meschambres">Mes chambres</a>
+												 <a class="dropdown-item" href="mescommandes">Mes commandes</a>
+												<div class="dropdown-divider"
+													style="border: 1px solid #31a9a9"></div>
+												<a class="dropdown-item" href="logOutHotel">Déconnecter</a>
 											</div></li>
 									</c:if>
 								</ul>
@@ -206,5 +221,6 @@
 			</div>
 		</div>
 	</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </header>

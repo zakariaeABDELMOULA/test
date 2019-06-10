@@ -199,7 +199,7 @@ $(document).ready(function () {
                 $("#btnSubmit").prop("disabled", false);
                 $(".alert-success").show();
                 $(".alert-danger").hide();
-                window.location.replace("/login");                
+                window.location.replace("/loginClient");                
             },
             error: function (e) {
             	 $(".alert-success").hide();

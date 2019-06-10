@@ -17,6 +17,9 @@ public interface PersonneRepository extends JpaRepository<Personne, Long>{
 	
 	List<Personne> authentification(String email,String mdp);
 	*/
-	@Query("select p from Personne p where p.email = ?1 and p.mdp = ?2")
+	@Query("select p from Personne p where p.email = ?1 and p.mdp = ?2 and p.etat=1")
 	Personne authentification(String email, String mdp);
+	
+	@Query("select p from Personne p where type ='admin' ")
+	List<Personne>  admins();
 }

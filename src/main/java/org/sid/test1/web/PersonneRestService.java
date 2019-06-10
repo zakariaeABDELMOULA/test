@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.sid.dao.PersonneRepository;
 import org.sid.entities.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +41,11 @@ public class PersonneRestService {
 		return personneRestService.findAll();
 	}
 	
+	@RequestMapping(value = "/admins/personnes",method = RequestMethod.GET)
+	private List<Personne> getPersonnesAdmin(){
+		return personneRestService.admins();
+	}
+	
 	@RequestMapping(value = "/personnes/{id}",method = RequestMethod.GET)
 	private Personne getPersonnes(@PathVariable Long id){
 		return personneRestService.findOne(id);
@@ -65,6 +72,33 @@ public class PersonneRestService {
 		System.out.println(personne.getPrenom());
 		System.out.println("nom : "+personne.getNom());
 		personneRestService.save(personne);
+		return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);	
+		}catch(Exception ex) {
+			return new ResponseEntity<>(ex.getMessage().toString()+".", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		finally {
+			//return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);	
+		}
+	}
+	
+	@RequestMapping(value = "/mpersonnes",method = RequestMethod.POST,consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	private ResponseEntity<Object> msaveWithImage(HttpServletRequest request,@RequestParam(required=true, value="filename") MultipartFile file, @RequestParam(required=true, value="jsondata")String jsondata) throws IOException{
+		try {
+		Personne personne = objectMapper.readValue(jsondata, Personne.class);
+		if(file.getSize()>0) {
+		File convertFile = new File("src/main/resources/static/"+personne.getImage());
+		convertFile.createNewFile();
+		FileOutputStream fout = new FileOutputStream(convertFile);
+		System.out.println("la taille est : "+file.getSize());
+		fout.write(file.getBytes());
+		fout.close();
+		}
+		
+		System.out.println(personne.getNom());
+		System.out.println(personne.getPrenom());
+		System.out.println("nom : "+personne.getNom());
+		personneRestService.save(personne);
+		request.getSession().setAttribute("objetConnecter", personne);
 		return new ResponseEntity<>("File is uploaded successfully", HttpStatus.OK);	
 		}catch(Exception ex) {
 			return new ResponseEntity<>(ex.getMessage().toString()+".", HttpStatus.INTERNAL_SERVER_ERROR);

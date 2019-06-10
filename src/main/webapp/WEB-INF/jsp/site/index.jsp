@@ -1,19 +1,14 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 
 <head>
-<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/reservation" user="root" password=""/>
 <!-- Standard Meta -->
 <meta charset="utf-8">
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Site Properties -->
-<title>Sativa - Hotel &amp; Resort HTML Template</title>
+<title>Reservation Hôtel</title>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon-precomposed"
 	href="images/apple-touch-icon.png">
@@ -33,13 +28,11 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/media-query.css" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body class="impx-body" id="top">
 
 	<!-- HEADER -->
-	include
 	<%@ include file="header.jsp" %>
 	<!-- HEADER END -->
 
@@ -57,7 +50,7 @@
 								<!-- Slideshow Item #1 -->
 								<div
 									class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-bottom-center">
-									<img src="images/slideshow/full-slide-1.jpg" alt=""
+									<img src="images/slideshow/s1.jpg" alt=""
 										data-uk-cover="height:319px">
 									<div
 										class="uk-overlay-primary uk-position-cover impx-overlay dark"></div>
@@ -68,11 +61,9 @@
 											<div
 												class="impx-slide-fw-caption-outline uk-transition-slide-left"></div>
 											<h1
-												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-left">Sativa
-												Hotel &amp; Resort</h1>
+												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-left"> Bienvenue, vous êtes chez vous ! </h1>
 											<p
-												class="impx-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-bottom uk-text-right uk-text-uppercase">Responsive
-												HTML Template</p>
+												class="impx-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-bottom uk-text-right uk-text-uppercase">Les Me</p>
 										</div>
 									</div>
 								</div>
@@ -93,11 +84,10 @@
 											<div
 												class="impx-slide-fw-caption-outline right bottom uk-transition-slide-left"></div>
 											<h1
-												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-right">Beautiful
-												Panorama</h1>
+												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-right">L'hôtel idéal au meilleur prix </h1>
 											<p
 												class="uk-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-bottom uk-text-right uk-text-uppercase">Enjoy
-												the Best View</p>
+												la meilleure vue</p>
 										</div>
 									</div>
 								</div>
@@ -118,11 +108,9 @@
 											<div
 												class="impx-slide-fw-caption-outline uk-transition-slide-top"></div>
 											<h1
-												class="impx-text-white uk-margin-remove impx-text-shadow uk-transition-scale-down">Luxurious
-												&amp; Convenient</h1>
+												class="impx-text-white uk-margin-remove impx-text-shadow uk-transition-scale-down">Hôtels ibis, on ne peut pas rêver mieux</h1>
 											<p
-												class="uk-text-large impx-text-gold uk-margin-remove impx-text-shadow uk-transition-scale-up uk-text-right uk-text-uppercase">Choose
-												The Best One</p>
+												class="uk-text-large impx-text-gold uk-margin-remove impx-text-shadow uk-transition-scale-up uk-text-right uk-text-uppercase">Choisir le meilleur</p>
 										</div>
 									</div>
 								</div>
@@ -143,11 +131,9 @@
 											<div
 												class="impx-slide-fw-caption-outline center bottom uk-transition-slide-left"></div>
 											<h1
-												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-center">Oriental
-												Spa</h1>
+												class="uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-center">L'essentiel pour une bonne nuit</h1>
 											<p
-												class="uk-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-bottom uk-text-center uk-text-uppercase">Our
-												Spa Service</p>
+												class="uk-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-bottom uk-text-center uk-text-uppercase">On a tous ce que vous voulez!</p>
 										</div>
 									</div>
 								</div>
@@ -168,11 +154,9 @@
 											<div
 												class="impx-slide-fw-caption-outline uk-transition-slide-fade"></div>
 											<h1
-												class="impx-text-white uk-margin-remove impx-text-shadow uk-transition-slide-bottom">In-house
-												Restaurant</h1>
+												class="impx-text-white uk-margin-remove impx-text-shadow uk-transition-slide-bottom">Des hôtels comme on les aime ! </h1>
 											<p
-												class="uk-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-right uk-text-uppercase">The
-												Delicious Foods</p>
+												class="uk-text-large impx-text-aqua uk-margin-remove impx-text-shadow uk-transition-slide-top uk-text-right uk-text-uppercase">Vos rêves sont nos objectifs</p>
 										</div>
 									</div>
 								</div>
@@ -200,36 +184,35 @@
 	<!-- SERVICES LIST & BOOKING FORM -->
 	<div class="impx-content impx-services style2 bg-color-aqua pattern-1">
 		<div class="uk-container">
-
+			<c:if test="${sessionScope.objetConnecter == null && sessionScope.hotel == null }">
 			<div class="uk-margin-medium-bottom impx-margin-bottom-small"
 				data-uk-grid>
-
+				
 				<!-- Services List -->
 				<div
 					class="uk-width-expand impx-services-list uk-margin-bottom impx-margin-bottom-small">
 					<h6
 						class="uk-heading-line uk-text-center uk-light uk-margin-bottom impx-text-white">
-						<span>Our Services</span>
+						<span>Se Connecter</span>
 					</h6>
-					<div
-						class="uk-child-width-1-4@xl uk-child-width-1-4@l uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-medium"
+					
+						<div
+						class="uk-child-width-1-2@xl uk-child-width-1-2@l uk-child-width-1-2@m uk-child-width-1-2@s uk-grid-medium"
 						data-uk-grid>
 						<div>
 							<!-- Services Item #1 -->
 							<div
 								class="uk-card uk-card-default uk-box-shadow-hover-xlarge impx-service-card uk-padding-bottom">
 								<div class="uk-card-media-top">
-									<img src="images/service-1.jpg" alt="">
+									<img src="images/espace-client.jpg" alt="" >
 								</div>
 								<div class="uk-card-body uk-card-small uk-text-center">
 									<div
-										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Hotel
-										&amp; Resort</div>
-									<p>Alterum significari idem, ut si diceretur, officia media
-										omnia aut pleraque servantem vivere</p>
-									<a href="#"
-										class="uk-button uk-button-default uk-button-small impx-button gold impx-button-outline outline-gold button-wide impx-button-rounded small-border">Learn
-										More &raquo;</a>
+										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Espace Client</div>
+									<p>Cet espace vous permet de s'authentifier de profiter d'une expérience inoubliable, on vous offrant des centains d'hôtels</p>
+									<a href="/loginClient"
+										class="uk-button uk-button-default uk-button-small impx-button gold impx-button-outline 
+										outline-gold button-wide impx-button-rounded small-border">Se Connecter &raquo;</a>
 								</div>
 							</div>
 						</div>
@@ -239,129 +222,101 @@
 							<div
 								class="uk-card uk-card-default uk-box-shadow-hover-xlarge impx-service-card">
 								<div class="uk-card-media-top">
-									<img src="images/service-2.jpg" alt="">
+									<img src="images/espace-hotel.jpg" alt="">
 								</div>
 								<div class="uk-card-body uk-card-small uk-text-center">
 									<div
-										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Restaurant</div>
-									<p>Alterum significari idem, ut si diceretur, officia media
-										omnia aut pleraque servantem vivere</p>
-									<a href="#"
-										class="uk-button uk-button-default uk-button-small impx-button gold impx-button-outline outline-gold button-wide impx-button-rounded small-border">Learn
-										More &raquo;</a>
+										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Espace Hôtel</div>
+								<p>Cet espace vous permet de s'authentifier de proposer vos chambre, hôtels 
+								pour profiter de cette plateforme qui contient des centains de clients</p>
+
+									<a href="loginHotel"
+										class="uk-button uk-button-default uk-button-small impx-button gold
+										 impx-button-outline outline-gold button-wide impx-button-rounded
+										  small-border">Se Connecter &raquo;</a>
 								</div>
 							</div>
 						</div>
 						<!-- Services Item #2 End -->
-						<div>
-							<!-- Services Item #3 -->
-							<div
-								class="uk-card uk-card-default uk-box-shadow-hover-xlarge impx-service-card">
-								<div class="uk-card-media-top">
-									<img src="images/service-3.jpg" alt="">
-								</div>
-								<div class="uk-card-body uk-card-small uk-text-center">
-									<div
-										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Spa</div>
-									<p>Alterum significari idem, ut si diceretur, officia media
-										omnia aut pleraque servantem vivere</p>
-									<a href="#"
-										class="uk-button uk-button-default uk-button-small impx-button gold impx-button-outline outline-gold button-wide impx-button-rounded small-border">Learn
-										More &raquo;</a>
-								</div>
-							</div>
-						</div>
-						<!-- Services Item #3 End -->
-						<div>
-							<!-- Services Item #4 -->
-							<div
-								class="uk-card uk-card-default uk-box-shadow-hover-xlarge impx-service-card">
-								<div class="uk-card-media-top">
-									<img src="images/service-4.jpg" alt="">
-								</div>
-								<div class="uk-card-body uk-card-small uk-text-center">
-									<div
-										class="uk-card-badge uk-label uk-label-danger bg-color-aqua">Outdoor</div>
-									<p>Alterum significari idem, ut si diceretur, officia media
-										omnia aut pleraque servantem vivere</p>
-									<a href="#"
-										class="uk-button uk-button-default uk-button-small impx-button gold impx-button-outline outline-gold button-wide impx-button-rounded small-border">Learn
-										More &raquo;</a>
-								</div>
-							</div>
-						</div>
-						<!-- Services Item #4 End -->
+					
 					</div>
 				</div>
-				<!-- Services List End -->
-
+				<!-- Services List End -->				
 			</div>
+			</c:if>
 
 			<!-- Booking Form -->
 			<div class="uk-margin-medium-bottom uk-margin-medium-top">
 				<div class="impx-hp-booking-form impx-margin-top-small">
 					<h6
 						class="uk-heading-line uk-text-center uk-margin-small-bottom impx-text-white">
-						<span>Booking Form</span>
+						<span>Réserver maintenant </span>
 					</h6>
+					
 					<form
 						class="uk-child-width-1-6@xl uk-child-width-1-6@l uk-child-width-1-6@m uk-child-width-1-3@s uk-grid-medium"
-						data-uk-grid>
+						data-uk-grid
+						action="chercher"
+						>
 						<div class="uk-form-controls">
 							<div class="uk-inline">
-								<label class="uk-form-label  impx-text-white">Email</label> <span
-									class="uk-form-icon" data-uk-icon="icon: mail"></span> <input
+								<label class="uk-form-label  impx-text-white">Raison social</label>  <input
 									class="uk-input booking-email uk-border-rounded uk-width-1-1"
-									type="text" placeholder="your e-mail">
+									type="text" name="raison_social" placeholder="entrer le nom">
 							</div>
 						</div>
 						<div class="uk-form-controls">
 							<div class="uk-inline">
-								<label class="uk-form-label impx-text-white">Arrival</label> <span
+								<label class="uk-form-label  impx-text-white">Pays</label>  <input
+									class="uk-input booking-email uk-border-rounded uk-width-1-1"
+									type="text" name="pays" placeholder="entrer le pays">
+							</div>
+						</div>
+						<div class="uk-form-controls">
+							<div class="uk-inline">
+								<label class="uk-form-label  impx-text-white">Ville</label>  <input
+									class="uk-input booking-email uk-border-rounded uk-width-1-1"
+									type="text" name="ville" placeholder="entrer la ville">
+							</div>
+						</div>
+						<div class="uk-form-controls">
+							<div class="uk-inline">
+								<label class="uk-form-label impx-text-white">Date de début</label> <span
 									class="uk-form-icon" data-uk-icon="icon: calendar"></span> <input
-									class="uk-input booking-arrival uk-border-rounded" type="text"
+									class="uk-input booking-arrival uk-border-rounded" name="date_debut" type="text"
 									placeholder="m/dd/yyyy">
 							</div>
 						</div>
 						<div class="uk-form-controls">
 							<div class="uk-inline">
-								<label class="uk-form-label impx-text-white">Departure</label> <span
+								<label class="uk-form-label impx-text-white">Date de fin</label> <span
 									class="uk-form-icon" data-uk-icon="icon: calendar"></span> <input
-									class="uk-input booking-departure uk-border-rounded"
+									name="date_fin" class="uk-input booking-departure uk-border-rounded"
 									type="text" placeholder="m/dd/yyyy">
 							</div>
 						</div>
 						<div class="uk-form-controls uk-position-relative">
 							<label class="uk-form-label impx-text-white"
-								for="form-guest-select">Guest</label> <span
+								for="form-guest-select">Nombre d'étoile</label> <span
 								class="uk-form-icon select-icon" data-uk-icon="icon: users"></span>
 							<select class="uk-select uk-border-rounded"
-								id="form-guest-select">
-								<option value="">Please select...</option>
+								id="form-guest-select" name="nombre_etoile">
 								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
 							</select>
 						</div>
-						<div class="uk-form-controls uk-position-relative">
-							<label class="uk-form-label impx-text-white"
-								for="form-rooms-select">Rooms</label> <span
-								class="uk-form-icon select-icon" data-uk-icon="icon: album"></span>
-							<select class="uk-select uk-border-rounded"
-								id="form-rooms-select">
-								<option value="">Please select...</option>
-								<option value="room_1">Single</option>
-								<option value="room_2">Double</option>
-								<option value="room_3">Primier</option>
-								<option value="room_4">Deluxe</option>
-							</select>
-						</div>
+						
 						<div>
 							<label class="uk-form-label empty-label">&nbsp;</label>
-							<button class="uk-button uk-width-1-1">Book Now!</button>
+							<button class="uk-button uk-width-1-1">Chercher !</button>
 						</div>
 					</form>
+				
 				</div>
 			</div>
 			<!-- Booking Form End -->
@@ -374,11 +329,9 @@
 					class="uk-width-2-3@xl uk-width-2-3@l uk-width-1-1@m uk-width-1-1@s">
 					<div
 						class="impx-intro uk-text-center uk-light uk-margin-remove-bottom">
-						<h2 class="uk-margin-remove-vertical uk-margin-remove-bottom">Choose
-							the Best Rooms &amp; Make Reservation</h2>
+						<h2 class="uk-margin-remove-vertical uk-margin-remove-bottom">Choisir les meilleurs meilleurs chambres et hôtels</h2>
 						<p
-							class="impx-text-large uk-margin-remove-bottom uk-margin-small-top">Etenim
-							semper illud extra arte comprehenditur utebare non numquam.</p>
+							class="impx-text-large uk-margin-remove-bottom uk-margin-small-top">Trouver chez nous tous ce que vous cherchez.</p>
 					</div>
 				</div>
 			</div>
@@ -413,30 +366,19 @@
 								<div
 									class="uk-card-body uk-position-relative impx-padding-medium">
 									<div class="uk-card-header uk-padding-remove-horizontal">
-										<h4 class="uk-card-title uk-margin-remove-bottom">Single
-											Room</h4>
-										<p class="uk-text-meta uk-margin-remove-top">Subtitle Goes
-											Here</p>
+										<h4 class="uk-card-title uk-margin-remove-bottom">Chambre simple</h4>
+										<p class="uk-text-meta uk-margin-remove-top">une chambre simple</p>
 									</div>
-									<span class="uk-card-badge uk-label bg-color-aqua">from
-										$50/night</span>
+									<span class="uk-card-badge uk-label bg-color-aqua">à partir de
+										$50/nuit</span>
 									<ul class="uk-list room-fac">
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Beatus in
-											maximarum timore</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> chambre de luxe</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Oculis
-											Compensabatur</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> calme</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Dolorisnos
-											veriusque nihil</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> pour 3 personnes</li>
 									</ul>
-									<div
-										class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom">
-										<a href="room-detail.html"
-											class="uk-button uk-button-text impx-text-aqua">Read more
-											&raquo;</a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -457,30 +399,18 @@
 								<div
 									class="uk-card-body uk-position-relative impx-padding-medium">
 									<div class="uk-card-header uk-padding-remove-horizontal">
-										<h4 class="uk-card-title uk-margin-remove-bottom">Double
-											Room</h4>
-										<p class="uk-text-meta uk-margin-remove-top">Subtitle Goes
-											Here</p>
-									</div>
-									<span class="uk-card-badge uk-label bg-color-aqua">from
-										$80/night</span>
+										<h4 class="uk-card-title uk-margin-remove-bottom">Chambre double</h4>
+																			</div>
+									<span class="uk-card-badge uk-label bg-color-aqua">à partir de
+										$50/nuit</span>
 									<ul class="uk-list room-fac">
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Beatus in
-											maximarum timore</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> chambre de luxe</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Oculis
-											Compensabatur</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> douce</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Dolorisnos
-											veriusque nihil</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> pour 5 personnes</li>
 									</ul>
-									<div
-										class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom">
-										<a href="room-detail.html"
-											class="uk-button uk-button-text impx-text-aqua">Read more
-											&raquo;</a>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -495,30 +425,19 @@
 								<div
 									class="uk-card-body uk-position-relative impx-padding-medium">
 									<div class="uk-card-header uk-padding-remove-horizontal">
-										<h4 class="uk-card-title uk-margin-remove-bottom">Premiere
-											Room</h4>
-										<p class="uk-text-meta uk-margin-remove-top">Subtitle Goes
-											Here</p>
+										<h4 class="uk-card-title uk-margin-remove-bottom">Premiere chambre</h4>
+										
 									</div>
-									<span class="uk-card-badge uk-label bg-color-aqua">from
-										$100/night</span>
+									<span class="uk-card-badge uk-label bg-color-aqua">à partir de
+										$100/nuit</span>
 									<ul class="uk-list room-fac">
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Beatus in
-											maximarum timore</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> chambre de luxe</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Oculis
-											Compensabatur</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> grande</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Dolorisnos
-											veriusque nihil</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> pour 7 personnes</li>
 									</ul>
-									<div
-										class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom">
-										<a href="room-detail.html"
-											class="uk-button uk-button-text impx-text-aqua">Read more
-											&raquo;</a>
-									</div>
 								</div>
 								<div
 									class="uk-card-media-right uk-cover-container uk-position-relative">
@@ -540,29 +459,19 @@
 									class="uk-card-body uk-position-relative impx-padding-medium">
 									<div class="uk-card-header uk-padding-remove-horizontal">
 										<h4 class="uk-card-title uk-margin-remove-bottom">Deluxe
-											Room</h4>
-										<p class="uk-text-meta uk-margin-remove-top">Subtitle Goes
-											Here</p>
+											chambre</h4>
+										
 									</div>
-									<span class="uk-card-badge uk-label bg-color-aqua">from
-										$150/night</span>
+									<span class="uk-card-badge uk-label bg-color-aqua">à partir de
+										$50/nuit</span>
 									<ul class="uk-list room-fac">
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Beatus in
-											maximarum timore</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> chambre de luxe et grand</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Oculis
-											Compensabatur</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> calme et douce</li>
 										<li><span class="impx-text-aqua"
-											data-uk-icon="icon: check; ratio: 1;"></span> Dolorisnos
-											veriusque nihil</li>
+											data-uk-icon="icon: check; ratio: 1;"></span> pour 10 personnes</li>
 									</ul>
-									<div
-										class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom">
-										<a href="room-detail.html"
-											class="uk-button uk-button-text impx-text-aqua">Read more
-											&raquo;</a>
-									</div>
 								</div>
 								<div
 									class="uk-card-media-right uk-cover-container uk-position-relative">
@@ -591,12 +500,9 @@
 				data-uk-grid>
 
 				<!-- Intro Text -->
-				<div class="impx-intro uk-text-left">
-					<h2 class="uk-margin-remove-bottom uk-margin-small-top">Why
-						Choose Us?</h2>
-					<p class="uk-margin-remove uk-text-uppercase">You can
-						additional subtitle Here.</p>
-				</div>
+				<div class="impx-intro uk-text-left" id="sommeNous">
+					<h2 class="uk-margin-remove-bottom uk-margin-small-top">Pourquoi nous?</h2>
+					<p class="uk-margin-remove uk-text-uppercase">Notre site hôtelier est l'un des plus important d'Europe. Que ce soit des hôtels en France appartenant à une enseigne ou des établissements indépendants.</div>
 				<!-- Intro Text End -->
 				<ul
 					class="uk-child-width-1-3@xl uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-2@s impx-features-hl uk-grid-medium uk-grid-match uk-margin-top impx-margin-top-small"
@@ -605,11 +511,8 @@
 						<!-- Reason Item #1 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color1 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Best
-								Value for Family</h6>
-							<p class="uk-margin-remove  impx-text-lighter">Cur igitur,
-								cum de re conveniat, melius nos veriusque quam Stoici mallem aut
-								expetendam.</p>
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Meilleur rapport qualité-prix pour la famille</h6>
+							<p class="uk-margin-remove  impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
 							<span data-uk-icon="icon: users; ratio: 8" class="feature-icon"></span>
 						</div>
 					</li>
@@ -618,11 +521,9 @@
 						<!-- Reason Item #2 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color2 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Services
-								Priority</h6>
-							<p class="uk-margin-remove impx-text-lighter">Cur igitur, cum
-								de re conveniat, melius nos veriusque quam Stoici mallem aut
-								expetendam.</p>
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Priorité de services</h6>
+							<p class="uk-margin-remove impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
+							</p>
 							<span data-uk-icon="icon: bell; ratio: 8" class="feature-icon"></span>
 						</div>
 					</li>
@@ -631,11 +532,10 @@
 						<!-- Reason Item #3 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color3 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Best
-								Facilities</h6>
-							<p class="uk-margin-remove impx-text-lighter">Cur igitur, cum
-								de re conveniat, melius nos veriusque quam Stoici mallem aut
-								expetendam.</p>
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Meilleurs équipements
+</h6>
+							<p class="uk-margin-remove impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
+							</p>
 							<span data-uk-icon="icon: star; ratio: 8" class="feature-icon"></span>
 						</div>
 					</li>
@@ -644,9 +544,8 @@
 						<!-- Reason Item #4 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color4 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Satisfation
-								Guarantee</h6>
-							<p class="uk-margin-remove impx-text-lighter">Cur igitur, cum
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Garantie de satisfaction</h6>
+							<p class="uk-margin-remove impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
 								de re conveniat, melius nos veriusque quam Stoici mallem aut
 								expetendam.</p>
 							<span data-uk-icon="icon: heart; ratio: 8" class="feature-icon"></span>
@@ -657,11 +556,9 @@
 						<!-- Reason Item #5 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color5 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Beatiful
-								Panorama</h6>
-							<p class="uk-margin-remove impx-text-lighter">Cur igitur, cum
-								de re conveniat, melius nos veriusque quam Stoici mallem aut
-								expetendam.</p>
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Beau panorama</h6>
+							<p class="uk-margin-remove impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
+							</p>
 							<span data-uk-icon="icon: image; ratio: 8" class="feature-icon"></span>
 						</div>
 					</li>
@@ -670,11 +567,9 @@
 						<!-- Reason Item #6 -->
 						<div
 							class="uk-card uk-card-default uk-card-body uk-box-shadow-medium color6 impx-feature-item uk-position-relative">
-							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Enjoy
-								Your Time</h6>
-							<p class="uk-margin-remove impx-text-lighter">Cur igitur, cum
-								de re conveniat, melius nos veriusque quam Stoici mallem aut
-								expetendam.</p>
+							<h6 class="uk-margin-remove-top uk-margin-bottom impx-text-white">Profiter de votre temps</h6>
+							<p class="uk-margin-remove impx-text-lighter">Pourquoi, alors, quand tout est convenable, il vaut mieux pour nous et plus vraiment, ou devrais-je préféré à désirer que les stoïciens.</p>
+							</p>
 							<span data-uk-icon="icon: happy; ratio: 8" class="feature-icon"></span>
 						</div>
 					</li>
@@ -690,117 +585,117 @@
 	<!-- PRICING PLANS -->
 	<div
 		class="uk-padding uk-padding-remove-horizontal impx-section-pricing">
-		<div class="uk-container">
+		<div class="uk-container" id="offre">
 			<div
 				class="uk-flex uk-flex-center uk-margin-medium-bottom impx-margin-bottom-small">
 				<!-- Pricing Intro -->
 				<div
 					class="uk-width-2-3@xl uk-width-2-3@l uk-width-2-3@m uk-width-1-1@s uk-text-center hp-offer-intro">
-					<h2 class="uk-margin-small-bottom">Our Special Offers</h2>
+					<h2 class="uk-margin-small-bottom">Nos offres spéciaux</h2>
 					<p
 						class="impx-text-large uk-margin-remove-top uk-margin-small-bottom">
-						Eiuro, inquit adridens, iniquum, hac quidem de re Conferam tecum,
-						Hanc quoque iucunditatem, si vis, <span
-							class="uk-label uk-label-danger uk-text-bold bg-color-gold">$299
-							for 3 Nights</span> transfer in animum; Sed quanta sit alias?
+						Vous trouverez chez nous les meuilleurs offres du monde, vous pouvez Passer une nuit à partir de <span
+							class="uk-label uk-label-danger uk-text-bold bg-color-gold">299 Euro
+							</span>.
 					</p>
 				</div>
 				<!-- Pricing Intro End -->
 			</div>
-
+			
 			<div class="uk-flex uk-flex-center uk-margin-bottom">
 				<div
 					class="uk-width-5-6@xl uk-width-5-6@l uk-width-5-6@m uk-width-1-1@s impx-pricing-list"
 					data-uk-grid>
-
+					
+					<sql:query var="rs" dataSource="${db}">
+						select c.id_chambre,i.image,raison_social,c.description,c.prix from chambre c,hotel h, image_chambre i where c.id_hotel = h.id_hotel && i.id_chambre = c.id_chambre LIMIT 4
+						</sql:query>
+					<c:set var="i" value="0" />							
 					<ul
 						class="uk-child-width-1-3@xl uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-3@s uk-grid-collapse impx-promo-pricing-list"
 						data-uk-grid>
-						<li class="uk-position-relative">
-							<!-- Pricing Item #1-->
-							<div class="impx-promo-pricing uk-box-shadow-large uk-light">
-								<div class="uk-position-relative">
-									<img src="images/pricing-img-1.jpg" alt="">
-									<div class="impx-overlay light"></div>
+						<c:forEach var="columnName" items="${rs.rows}">
+							<c:set var="i" value="${i+1 }" />	
+							<c:if test="${i ==1 }" >
+							<li class="uk-position-relative">
+								<!-- Pricing Item #1-->
+								<div class="impx-promo-pricing uk-box-shadow-large uk-light">
+									<div class="uk-position-relative">
+										<img style="width:230" src="${ columnName.image}" alt="">
+										<div class="impx-overlay light"></div>
+									</div>
+									<div class="uk-position-relative uk-padding bg-color-gold">
+										<h4 class="uk-heading-line uk-margin-small-bottom">
+											<span>${ columnName.raison_social}</span>
+										</h4>
+										<span
+											class="uk-label uk-label-success impx-text-gold uk-text-bold">${ columnName.prix} pour nuit</span>
+										<ul class="uk-list">
+											<li><i class="fa fa-bed"></i>${ columnName.description}</li>
+										</ul>
+										<a href="room-detail?id_chambre=${columnName.id_chambre }"
+											class="uk-button impx-button small impx-button-outline small-border">Voir détail
+											 <i class="fa fa-arrow-right"></i>
+										</a>
+									</div>
 								</div>
-								<div class="uk-position-relative uk-padding bg-color-gold">
-									<h4 class="uk-heading-line uk-margin-small-bottom">
-										<span>Silver</span>
-									</h4>
-									<span
-										class="uk-label uk-label-success impx-text-gold uk-text-bold">$299
-										for 3 Nights</span>
-									<ul class="uk-list">
-										<li><i class="fa fa-bed"></i> Quae qui non vident, nihil</li>
-										<li><i class="fa fa-coffee"></i> praeclare inter se
-											cohaerere</li>
-										<li><i class="fa fa-group"></i> Tenesne igitur, inquam</li>
-									</ul>
-									<a href="#"
-										class="uk-button impx-button small impx-button-outline small-border">View
-										Detail <i class="fa fa-arrow-right"></i>
-									</a>
-								</div>
-							</div>
-						</li>
-						<!-- Pricing Item #1 End -->
-						<li class="uk-position-relative uk-position-z-index">
+							</li>
+							</c:if>
+							
+							<!-- Pricing Item #1 End -->
+							<c:if  test="${i == 2 }" >
+								<li class="uk-position-relative uk-position-z-index">
 							<!-- Pricing Item #2 -->
 							<div
 								class="impx-promo-pricing uk-box-shadow-xlarge uk-light featured">
 								<div class="uk-position-relative">
-									<img src="images/pricing-img-2.jpg" alt="">
+									<img src="${ columnName.image}" alt="">
 									<div class="impx-overlay light"></div>
 								</div>
 								<div class="uk-position-relative uk-padding bg-color-aqua">
 									<h3 class="uk-heading-line uk-margin-small-bottom">
-										<span>Gold</span>
+										<span>${ columnName.raison_social}</span>
 									</h3>
 									<span
-										class="uk-label uk-label-success impx-text-aqua uk-text-bold">$399
-										for 3 Nights</span>
+										class="uk-label uk-label-success impx-text-aqua uk-text-bold">${ columnName.prix} pour nuit</span>
 									<ul class="uk-list uk-list-large">
-										<li><i class="fa fa-bed"></i> Quae qui non vident, nihil</li>
-										<li><i class="fa fa-coffee"></i> praeclare inter se
-											cohaerere</li>
-										<li><i class="fa fa-group"></i> Tenesne igitur, inquam</li>
+										<li><i class="fa fa-bed"></i>${ columnName.description}</li>
 									</ul>
-									<a href="#"
-										class="uk-button impx-button small impx-button-outline small-border">View
-										Detail <i class="fa fa-arrow-right"></i>
-									</a>
+									<a href="room-detail?id_chambre=${columnName.id_chambre }"
+											class="uk-button impx-button small impx-button-outline small-border">Voir détail
+											 <i class="fa fa-arrow-right"></i></a>
 								</div>
 							</div>
-						</li>
-						<!-- Pricing Item #2 End -->
+						</li> 
+								
+							</c:if>
+							<c:if test="${i == 3 }" >
 						<li class="uk-position-relative">
-							<!-- Pricing Item #3 -->
-							<div class="impx-promo-pricing uk-box-shadow-large uk-light">
-								<div class="uk-position-relative">
-									<img src="images/pricing-img-4.jpg" alt="">
-									<div class="impx-overlay light"></div>
+								<!-- Pricing Item #1-->
+								<div class="impx-promo-pricing uk-box-shadow-large uk-light">
+									<div class="uk-position-relative">
+										<img style="width:230" src="${ columnName.image}" alt="">
+										<div class="impx-overlay light"></div>
+									</div>
+									<div class="uk-position-relative uk-padding bg-color-gold">
+										<h4 class="uk-heading-line uk-margin-small-bottom">
+											<span>${ columnName.raison_social}</span>
+										</h4>
+										<span
+											class="uk-label uk-label-success impx-text-gold uk-text-bold">${ columnName.prix} pour nuit</span>
+										<ul class="uk-list">
+											<li><i class="fa fa-bed"></i>${ columnName.description}</li>
+										</ul>
+										<a href="room-detail?id_chambre=${columnName.id_chambre }"
+											class="uk-button impx-button small impx-button-outline small-border">Voir détail
+											 <i class="fa fa-arrow-right"></i>
+										</a>
+									</div>
 								</div>
-								<div class="uk-position-relative uk-padding bg-color-gold">
-									<h4 class="uk-heading-line uk-margin-small-bottom">
-										<span>Diamond</span>
-									</h4>
-									<span
-										class="uk-label uk-label-success impx-text-gold uk-text-bold">$499
-										for 3 Nights</span>
-									<ul class="uk-list">
-										<li><i class="fa fa-bed"></i> Quae qui non vident, nihil</li>
-										<li><i class="fa fa-coffee"></i> praeclare inter se
-											cohaerere</li>
-										<li><i class="fa fa-group"></i> Tenesne igitur, inquam</li>
-									</ul>
-									<a href="#"
-										class="uk-button impx-button small impx-button-outline small-border">View
-										Detail <i class="fa fa-arrow-right"></i>
-									</a>
-								</div>
-							</div>
-						</li>
-						<!-- Pricing Item #3 End -->
+							</li>
+							</c:if>
+						</c:forEach>
+						
 					</ul>
 
 				</div>
@@ -810,153 +705,7 @@
 	<!-- PRICING PLANS END -->
 
 	<!-- TESTIMONIALS CAROUSEL -->
-	<div
-		class="uk-padding uk-padding-remove-horizontal uk-position-relative impx-section-testimonial uk-background-fixed uk-background-center-center uk-height-1-1">
-		<div class="impx-overlay"></div>
-		<div class="uk-container">
-
-			<div class="uk-flex uk-flex-right uk-margin-bottom">
-
-				<div class="uk-width-3-5@xl uk-width-3-5@l uk-width-4-5@m">
-
-					<div class="impx-intro uk-text-right uk-light uk-position-relative">
-						<h2 class="uk-margin-small-bottom">Testimonials</h2>
-						<p
-							class="impx-text-large uk-margin-remove-top uk-margin-medium-bottom">Lorem
-							ipsum dolor sit amet, consectetur adipiscing elit. Si id dicis,
-							vicimus. Sed ad illum redeo. Quia nec honesto quic quam honestius
-							nec turpi turpius.</p>
-					</div>
-
-					<!-- Testimonials List -->
-					<div class="impx-testimonial-list">
-						<div data-uk-slider="{autoplay: true, finite: true}">
-							<div class="uk-position-relative uk-visible-toggle uk-light">
-								<ul class="uk-slider-items uk-child-width-1-1" data-uk-grid>
-									<li class="uk-padding uk-padding-remove-vertical">
-										<!-- Testimonial List Item 1 -->
-										<div class="impx-testimonial-item impx-contrast">
-											<div class="impx-testi-container">
-												<div class="impx-testi-text">
-													<blockquote>
-														<p>Hinc ceteri particulas arripere conati suam quisque
-															videro voluit afferre sententiam. Erit enim mecum, si
-															tecum erit conantur! nostrum! Incendi igitur eos, qui
-															audiunt, vides prima si dederis, danda sunt omnia</p>
-													</blockquote>
-												</div>
-												<div class="uk-text-center">
-													<div class="impx-testi-name">
-														<p>Mrs. Smith Yan</p>
-													</div>
-													<div class="impx-company-name">
-														<p class="bg-color-gold">Book Author</p>
-													</div>
-												</div>
-											</div>
-											<div class="impx-testi-image">
-												<img src="images/peoples/testi-people1.jpg" alt="People 1" />
-											</div>
-										</div>
-									</li>
-									<!-- Testimonial List Item 1 End -->
-									<li class="uk-padding uk-padding-remove-vertical">
-										<!-- Testimonial List Item 2 -->
-										<div class="impx-testimonial-item impx-contrast">
-											<div class="impx-testi-container">
-												<div class="impx-testi-text">
-													<blockquote>
-														<p>Hinc ceteri particulas arripere conati suam quisque
-															videro voluit afferre sententiam. Erit enim mecum, si
-															tecum erit conantur! nostrum! Incendi igitur eos, qui
-															audiunt, vides prima si dederis, danda sunt omnia</p>
-													</blockquote>
-												</div>
-												<div class="uk-text-center">
-													<div class="impx-testi-name">
-														<p>Mrs. Smith Yan</p>
-													</div>
-													<div class="impx-company-name">
-														<p class="bg-color-gold">Book Author</p>
-													</div>
-												</div>
-											</div>
-											<div class="impx-testi-image">
-												<img src="images/peoples/testi-people2.jpg" alt="People 1" />
-											</div>
-										</div>
-									</li>
-									<!-- Testimonial List Item 2 End -->
-									<li class="uk-padding uk-padding-remove-vertical">
-										<!-- Testimonial List Item 3 -->
-										<div class="impx-testimonial-item impx-contrast">
-											<div class="impx-testi-container">
-												<div class="impx-testi-text">
-													<blockquote>
-														<p>Hinc ceteri particulas arripere conati suam quisque
-															videro voluit afferre sententiam. Erit enim mecum, si
-															tecum erit conantur! nostrum! Incendi igitur eos, qui
-															audiunt, vides prima si dederis, danda sunt omnia</p>
-													</blockquote>
-												</div>
-												<div class="uk-text-center">
-													<div class="impx-testi-name">
-														<p>Mrs. Smith Yan</p>
-													</div>
-													<div class="impx-company-name">
-														<p class="bg-color-gold">Book Author</p>
-													</div>
-												</div>
-											</div>
-											<div class="impx-testi-image">
-												<img src="images/peoples/testi-people3.jpg" alt="People 1" />
-											</div>
-										</div>
-									</li>
-									<!-- Testimonial List Item 3 End -->
-									<li class="uk-padding uk-padding-remove-vertical">
-										<!-- Testimonial List Item 4 -->
-										<div class="impx-testimonial-item impx-contrast">
-											<div class="impx-testi-container">
-												<div class="impx-testi-text">
-													<blockquote>
-														<p>Hinc ceteri particulas arripere conati suam quisque
-															videro voluit afferre sententiam. Erit enim mecum, si
-															tecum erit conantur! nostrum! Incendi igitur eos, qui
-															audiunt, vides prima si dederis, danda sunt omnia</p>
-													</blockquote>
-												</div>
-												<div class="uk-text-center">
-													<div class="impx-testi-name">
-														<p>Mrs. Smith Yan</p>
-													</div>
-													<div class="impx-company-name">
-														<p class="bg-color-gold">Book Author</p>
-													</div>
-												</div>
-											</div>
-											<div class="impx-testi-image">
-												<img src="images/peoples/testi-people4.jpg" alt="People 1" />
-											</div>
-										</div>
-									</li>
-									<!-- Testimonial List Item 4 End -->
-								</ul>
-
-								<!-- Testimonial Nav -->
-								<a class="uk-position-center-left  uk-hidden-hover" href="#"
-									data-uk-slidenav-previous data-uk-slider-item="previous"></a> <a
-									class="uk-position-center-right uk-hidden-hover" href="#"
-									data-uk-slidenav-next data-uk-slider-item="next"></a>
-								<!-- Testimonial Nav End -->
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- TESTIMONIALS CAROUSEL END -->
 
 	<!-- CONTACT SECTION -->
@@ -1021,7 +770,6 @@
 
 	<!-- FOOTER -->
 		<%@ include file="footer.jsp" %>
-	</footer>
 	<!-- FOOTER END -->
 	
 	<!-- Javascript -->
@@ -1036,8 +784,5 @@
 	<script src="js/date-config.js"></script>
 	<script src="js/template-config.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>

@@ -190,8 +190,8 @@ $(document).ready(function () {
         	"email": $("#email").val(),
         	"etoiles": $("#etoiles").val(),
             "password" : $("#password").val(),
-            "pays": "pays",
-            "raison_social": "raison_social",
+            "pays": $("#pays").val(),
+            "raison_social": $("#raison_social").val(),
         	"telephone": $("#telephone").val(),
             "ville": $("#ville").val()
         };

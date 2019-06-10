@@ -27,6 +27,7 @@ public class Hotel implements Serializable{
 	private String password;
 	private String description;
 	private int etoiles;
+	private String image;
 	
 	
 
@@ -38,7 +39,7 @@ public class Hotel implements Serializable{
 
 	public Hotel(String raison_social, Date date_creation, String adresse,
 			String pays, String ville, String telephone, String email,
-			String password, String description, int etoiles) {
+			String password, String description, int etoiles,String image) {
 		super();
 		this.raison_social = raison_social;
 		this.date_creation = date_creation;
@@ -50,6 +51,7 @@ public class Hotel implements Serializable{
 		this.password = password;
 		this.description = description;
 		this.etoiles = etoiles;
+		this.image= image;
 	}
 
 
@@ -183,6 +185,18 @@ public class Hotel implements Serializable{
 
 	public void setEtoiles(int etoiles) {
 		this.etoiles = etoiles;
+	}
+
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	
